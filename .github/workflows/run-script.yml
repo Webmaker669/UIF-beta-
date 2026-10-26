@@ -2,8 +2,6 @@ name: Run JavaScript Script
 
 on:
   workflow_dispatch:
-  schedule:
-    - cron: '0 0 * * *'
 
 jobs:
   run-js:
@@ -15,7 +13,7 @@ jobs:
       - name: Set up Node.js
         uses: actions/setup-node@v4
         with:
-          node-version: '22' # Updated to Node 22 to match runner expectations
+          node-version: '22'
 
       - name: Run script
         run: node script.js
