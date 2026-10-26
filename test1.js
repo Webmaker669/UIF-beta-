@@ -1,6 +1,6 @@
 async function fetchData() {
   try {
-    console.log('Attempting to fetch data...');
+    console.log('Starting API request...');
     const response = await fetch('https://jsonplaceholder.typicode.com/posts/1');
     
     if (!response.ok) {
@@ -8,9 +8,10 @@ async function fetchData() {
     }
 
     const data = await response.json();
-    console.log('Successfully fetched data:', data);
+    console.log('Data retrieved successfully:');
+    console.log(JSON.stringify(data, null, 2));
   } catch (error) {
-    console.error('Caught an error during fetch:', error.message);
+    console.error('An error occurred:', error.message);
     process.exit(1);
   }
 }
